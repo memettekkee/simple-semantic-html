@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+main {
+  background: url(../img/messi.jpg);
+  background-size: cover;
+}
+
+.banner {
+    font-family: "Michroma", sans-serif;
+    background: url(../img/ucll.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 70px;
+    color: white;
+    transition: all 500ms;
+}
+
+.banner:hover {
+    transition: all 500ms ease;
+    padding: 70px;
+    background-position: center bottom;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-bottom:  2px groove #fff;
+    background-image: linear-gradient(90deg,#000222,#1f2544 50%, #000222)
+}
+.navigation img {
+    height: 30px;
+}
+.navigation ul {
+    display: flex;
+    gap: 2rem;
+    padding-inline: 1.5rem;
+}
+.navigation li {
+    list-style-type: none;
+}
+.navigation a:hover {
+    padding: 15px;
+    transition: 600ms ease;
+}
+.navigation a {
+    transition: 600ms ease;
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+}
+
+.box-image {
+  border-radius: 20px;
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+  }
+.box-image:hover {
+    object-fit: contain;
+    transform: scale(1.5);
+  }
+
+  main {
+    padding: 20px;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .card {
+    border-radius: 20px;
+    padding: 20px;
+    background: #1f2544;
+    border: 3px groove #fff;
+  }
+
+  #container {
+    flex: 5;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem 2rem;
+  }
+
+  .profile img {
+    width: 200px;
+    border-radius: 10px;
+  }
+
+  .profile th {
+    text-align: start;
+  }
+
+  span {
+    font-weight: bold;
+  }
+
+  footer {
+    padding: 20px;
+    color: white;
+    background-color: #1f2544;
+    border-top:  4px groove #fff;
+    text-align: center;
+    font-weight: bold;
+  }
+
+@media screen and (max-width: 1200px) {
+  main {
+    flex-flow: column nowrap;
+  }
+  main aside {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+  }
+  main aside {
+    align-self: stretch;
+  }
+}
