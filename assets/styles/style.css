@@ -63,15 +63,18 @@ main {
 
 .box-image {
   border-radius: 20px;
-    width: 100%;
-    max-height: 300px;
+    width: 50%;
+    max-height: 100vh;
     object-fit: contain cover;
     object-position: center;
-    transition: transform 0.5s ease;
   }
-.box-image:hover {
-    object-fit: contain;
-    transform: scale(1.5);
+
+  .gallery .box-image {
+    border-radius: 20px;
+    width: 100%;
+    max-height: 20vh;
+    object-fit: contain cover;
+    object-position: center;
   }
 
   main {
@@ -85,6 +88,14 @@ main {
     padding: 20px;
     background: #1f2544;
     border: 3px groove #fff;
+    background-image: url('/assets/img/test.png');
+  }
+
+  aside .card {
+    border-radius: 20px;
+    padding: 20px;
+    background: #1f2544;
+    border: 3px groove #fff;
   }
 
   #container {
@@ -92,6 +103,7 @@ main {
     display: flex;
     flex-flow: column nowrap;
     gap: 1rem 2rem;
+    
   }
 
   .profile img {
@@ -116,6 +128,20 @@ main {
     font-weight: bold;
   }
 
+  .gallery {
+    display: flex;
+    overflow-x: scroll;
+    gap: 2%;
+  }
+
+  .gallery div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 2%;
+    flex: none;
+  }
+
 @media screen and (max-width: 1200px) {
   main {
     flex-flow: column nowrap;
@@ -125,11 +151,64 @@ main {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .banner h1 {
+    font-size: 10vh;
+  }
+
+  .banner p {
+    font-size: 3vh;
+  }
+}
+
 @media screen and (max-width: 768px) {
-  nav ul {
-    justify-content: center;
+
+  .navigation {
+    font-size: 1.5vh;
   }
-  main aside {
-    align-self: stretch;
+
+  .box-image {
+    width: 100%;
   }
+
+  #container p {
+    font-size: 2vmax
+  }
+
+  .gallery .box-image {
+    border-radius: 20px;
+    width: 100%;
+    max-height: 80%;
+    object-fit: contain cover;
+    object-position: center;
+  }
+
+}
+
+.gallery::-webkit-scrollbar{
+  display: none;
+}
+
+.gallery-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 2%;
+}
+
+#backBtn, #nextBtn {
+  width: 5%;
+  background-color: #fff;
+  border-radius: 20%;
+  cursor: pointer;
+}
+
+#container h2{
+  font-style: italic;
+  font-size: 7.5vh;
+}
+
+#container h3{
+  font-size: 5vh;
 }
