@@ -25,11 +25,12 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url(book-img.jpeg);
 }
 
 section {
     width: 1024px;
-    border-radius: 8px;
+    border-radius: 20px;
     margin: 16px;
     /* background: #F8F9FA; */
     padding: 16px;
@@ -38,6 +39,8 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: linear-gradient(90deg, #ffffff 0%, #a8e6cf 100%);
+
 }
 
 section h2 {
