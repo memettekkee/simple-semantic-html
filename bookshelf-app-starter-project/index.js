@@ -9,6 +9,28 @@ window.addEventListener("DOMContentLoaded", () => {
     const spanCheck = submitBook.querySelector("span")
     const incompleteBookList = document.querySelector("[data-testid='incompleteBookList']")
     const completeBookList = document.querySelector("[data-testid='completeBookList']")
+    const searchBookForm = document.getElementById("searchBook");
+    const searchBookInput = document.getElementById("searchBookTitle");
+
+     const searchBooks = (searchTerm) => {
+        const allBooks = document.querySelectorAll("[data-bookid]");
+        
+        allBooks.forEach((book) => {
+            const title = book.querySelector("[data-testid='bookItemTitle']").innerText.toLowerCase();
+
+            if (title.includes(searchTerm)) {
+                book.style.display = "block";  
+            } else {
+                book.style.display = "none";   
+            }
+        });
+    };
+
+    searchBookForm.addEventListener("submit", (e) => {
+        e.preventDefault(); 
+        const searchTerm = searchBookInput.value.toLowerCase();
+        searchBooks(searchTerm);  
+    });
 
     isCompleted.addEventListener("change", () => {
         if (isCompleted.checked) {
@@ -167,17 +189,17 @@ window.addEventListener("DOMContentLoaded", () => {
                 bookAuthor.setAttribute("contenteditable", "true");
                 bookYear.setAttribute("contenteditable", "true");
                 e.target.innerText = "Simpan";
-                bookTitle.style.color = "green";
-                bookAuthor.style.color = "green";
-                bookYear.style.color = "green";
+                bookTitle.style.color = "#FFFF00";
+                bookAuthor.style.color = "#FFFF00";
+                bookYear.style.color = "#FFFF00";
               } else {
                 bookTitle.removeAttribute("contenteditable");
                 bookAuthor.removeAttribute("contenteditable");
                 bookYear.removeAttribute("contenteditable");
                 e.target.innerText = "Edit Buku";
-                bookTitle.style.color = "black";
-                bookAuthor.style.color = "black";
-                bookYear.style.color = "black";
+                bookTitle.style.color = "white";
+                bookAuthor.style.color = "white";
+                bookYear.style.color = "white";
                 updateLocalStorage();
               }
         });

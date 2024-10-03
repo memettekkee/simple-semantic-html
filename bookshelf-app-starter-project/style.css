@@ -130,7 +130,75 @@ form div #searchSubmit:hover {
 section .bookList {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 60%;
+    gap: 1px;
+    width: 100%;
+    /* padding: 20px; */
+}
+
+.bookList h2 {
+    text-align: center;
+}
+
+#sudah h2  {
+    /* background-color: #006400; */
+    color: red;
+}
+
+#belom h2 {
+    /* background-color: #8B0000; */
+    color: green;
+}
+
+.rak-buku {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.rak-buku section {
+    width: 500px;
+}
+
+.buttonContainer {
+    padding: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+.buttonContainer button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    border-style: none;
+}
+
+.buttonContainer button:hover {
+    color: white;
+    background-color: black;
+    transition: 200ms all;
+}
+
+#completeBookList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#incompleteBookList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.incompleteBook {
+    padding: 30px;
+    background-color: #169e1d;
+    border-radius: 10px;
+}
+
+.completeBook {
+    padding: 30px;
+    background-color: #e01414;
+    border-radius: 10px;
 }
 
