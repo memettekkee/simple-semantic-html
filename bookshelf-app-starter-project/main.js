@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
 
         const stringify = JSON.stringify(books);
-        localStorage.setItem
+        localStorage.setItem("book", stringify)
     }
 
     const loadData = () => {
@@ -88,7 +88,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const year = item.querySelector("[data-testid='bookItemYear']").innerText.replace("Tahun : ", "");
             const isComplete = item.parentElement.getAttribute("data-testid") === "completeBookList";
 
-            bookForm.push({
+            books.push({
                 id: parseInt(id),
                 title: title,
                 author: author,
@@ -135,7 +135,7 @@ window.addEventListener("DOMContentLoaded", () => {
         isCompleteBtn.innerText = "Selesai Dibaca";
 
         const deleteBtn = document.createElement("button");
-        deleteBtn.setAttribute("data-testid", "bookItemEditButton");
+        deleteBtn.setAttribute("data-testid", "bookItemDeleteButton");
         deleteBtn.innerText = "Hapus Buku";
 
         const editBtn = document.createElement("button");
